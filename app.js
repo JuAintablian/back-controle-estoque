@@ -12,9 +12,6 @@ import cors from 'cors'
 
 const app = express();
 
-// const swaggerUi = require(''),
-//   swaggerDocument = require();
-
 /*Conexao com o MongoDB*/
 (async () => {
   try {
@@ -37,7 +34,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(CategoryRouter);
 app.use(ProductRouter);
 app.use(OrderRouter);
